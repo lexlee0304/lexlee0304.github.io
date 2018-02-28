@@ -100,23 +100,28 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="c++,多态," />
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Limitless">
-<meta property="og:url" content="http://limitless.com/index.html">
+<meta name="description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
+<meta name="keywords" content="c++,多态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[c++]c++学习笔记：多态（一）">
+<meta property="og:url" content="http://limitless.com/2018/02/28/[c++]c++中的多态/index.html">
 <meta property="og:site_name" content="Limitless">
+<meta property="og:description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-28T14:16:14.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Limitless">
+<meta name="twitter:title" content="[c++]c++学习笔记：多态（一）">
+<meta name="twitter:description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
 
 
 
 
 
 
-  <link rel="canonical" href="http://limitless.com/"/>
+  <link rel="canonical" href="http://limitless.com/2018/02/28/[c++]c++中的多态/"/>
 
 
 
@@ -125,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Limitless</title>
+  <title>[c++]c++学习笔记：多态（一） | Limitless</title>
   
 
 
@@ -172,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -278,9 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/[c++]c++中的多态/" itemprop="url">[c++]c++学习笔记：多态（一）</a></h1>
+          <h1 class="post-title" itemprop="name headline">[c++]c++学习笔记：多态（一）</h1>
         
 
         <div class="post-meta">
@@ -329,9 +331,7 @@
       
 
       
-        
-          
-            <p>c++中的多态分为编译时的多态和运行时的多态。</p>
+        <p>c++中的多态分为编译时的多态和运行时的多态。</p>
 <p>多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。</p>
 <h2 id="1-运行时多态"><a href="#1-运行时多态" class="headerlink" title="1.运行时多态"></a>1.运行时多态</h2><p>C++中的运行时多态，即动态绑定行为主要通过虚函数实现。</p>
 <p>在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，虚函数声明只能出现在类定义的函数声明中，而不能在函数成员实现的时候。</p>
@@ -446,8 +446,6 @@ void Rectangle::draw()
 <pre><code>Draw a rectangle.
 Draw a circle.
 </code></pre>
-          
-        
       
     </div>
 
@@ -465,14 +463,22 @@ Draw a circle.
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/多态/" rel="tag"># 多态</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -482,14 +488,19 @@ Draw a circle.
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -510,8 +521,17 @@ Draw a circle.
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -571,6 +591,22 @@ Draw a circle.
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运行时多态"><span class="nav-number">1.</span> <span class="nav-text">1.运行时多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的demo"><span class="nav-number">1.1.</span> <span class="nav-text">简单的demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯虚函数及抽象类"><span class="nav-number">2.</span> <span class="nav-text">纯虚函数及抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#又一个demo"><span class="nav-number">2.1.</span> <span class="nav-text">又一个demo</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -698,6 +734,10 @@ Draw a circle.
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
 
   
 
