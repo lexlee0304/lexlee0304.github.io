@@ -100,28 +100,27 @@
 
 
   
-  <meta name="keywords" content="c++,多态," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
-<meta name="keywords" content="c++,多态">
+<meta name="description" content="c++中的运算符重载可以为运算符提供自定义的行为，即对于不同的类，相同的运算符可对应不同的操作。c++已经为一些类型提供了运算符重载，比如对于整型和浮点型数据以及字符串类的加法操作就表现出了不同的行为。用户也可以自定义运算符重载，从而为自定义类提供更加灵活方便的操作。 运算符重载的本质即将运算符的对应运算转变为对应的函数操作，当用户使用某一运算符时，就转至定义该运算符操作的函数。 1. 运算符重载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[c++]c++学习笔记：多态（一）">
-<meta property="og:url" content="http://limitless.com/2018/02/28/[c++]c++中的多态/index.html">
+<meta property="og:title" content="[c++]c++学习笔记:运算符重载">
+<meta property="og:url" content="http://limitless.com/2018/02/28/[c++]c++中的运算符重载/index.html">
 <meta property="og:site_name" content="Limitless">
-<meta property="og:description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
+<meta property="og:description" content="c++中的运算符重载可以为运算符提供自定义的行为，即对于不同的类，相同的运算符可对应不同的操作。c++已经为一些类型提供了运算符重载，比如对于整型和浮点型数据以及字符串类的加法操作就表现出了不同的行为。用户也可以自定义运算符重载，从而为自定义类提供更加灵活方便的操作。 运算符重载的本质即将运算符的对应运算转变为对应的函数操作，当用户使用某一运算符时，就转至定义该运算符操作的函数。 1. 运算符重载">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T14:16:14.737Z">
+<meta property="og:updated_time" content="2018-03-02T02:39:20.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[c++]c++学习笔记：多态（一）">
-<meta name="twitter:description" content="c++中的多态分为编译时的多态和运行时的多态。 多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。 1.运行时多态C++中的运行时多态，即动态绑定行为主要通过虚函数实现。 在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，">
+<meta name="twitter:title" content="[c++]c++学习笔记:运算符重载">
+<meta name="twitter:description" content="c++中的运算符重载可以为运算符提供自定义的行为，即对于不同的类，相同的运算符可对应不同的操作。c++已经为一些类型提供了运算符重载，比如对于整型和浮点型数据以及字符串类的加法操作就表现出了不同的行为。用户也可以自定义运算符重载，从而为自定义类提供更加灵活方便的操作。 运算符重载的本质即将运算符的对应运算转变为对应的函数操作，当用户使用某一运算符时，就转至定义该运算符操作的函数。 1. 运算符重载">
 
 
 
 
 
 
-  <link rel="canonical" href="http://limitless.com/2018/02/28/[c++]c++中的多态/"/>
+  <link rel="canonical" href="http://limitless.com/2018/02/28/[c++]c++中的运算符重载/"/>
 
 
 
@@ -130,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>[c++]c++学习笔记：多态（一） | Limitless</title>
+  <title>[c++]c++学习笔记:运算符重载 | Limitless</title>
   
 
 
@@ -265,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limitless.com/2018/02/28/[c++]c++中的多态/">
+    <link itemprop="mainEntityOfPage" href="http://limitless.com/2018/02/28/[c++]c++中的运算符重载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="EricLee">
@@ -282,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[c++]c++学习笔记：多态（一）</h1>
+          <h1 class="post-title" itemprop="name headline">[c++]c++学习笔记:运算符重载</h1>
         
 
         <div class="post-meta">
@@ -294,7 +293,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T10:50:17+08:00">2018-02-28</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T22:33:25+08:00">2018-02-28</time>
             
 
             
@@ -331,121 +330,52 @@
       
 
       
-        <p>c++中的多态分为编译时的多态和运行时的多态。</p>
-<p>多态行为需要通过绑定实现，所谓绑定，就是将定义的标识符同其对应的存储地址联系在一起的过程，而根据绑定所处阶段的不同，可以分为编译时的绑定和运行时的绑定，前者称为静态绑定，后者称为动态绑定。</p>
-<h2 id="1-运行时多态"><a href="#1-运行时多态" class="headerlink" title="1.运行时多态"></a>1.运行时多态</h2><p>C++中的运行时多态，即动态绑定行为主要通过虚函数实现。</p>
-<p>在基类的类定义中通过在函数声明前添加virtual关键字即可将函数声明为虚函数成员，注意，虚函数声明只能出现在类定义的函数声明中，而不能在函数成员实现的时候。</p>
-<p>在派生类中，可不用显式给出虚函数声明，编译器可以根据以下规则来判断派生类的一个函数成员是不是虚函数成员。</p>
-<ol>
-<li><p>函数是否与基类有相同的名称</p>
+        <p>c++中的运算符重载可以为运算符提供自定义的行为，即对于不同的类，相同的运算符可对应不同的操作。c++已经为一些类型提供了运算符重载，比如对于整型和浮点型数据以及字符串类的加法操作就表现出了不同的行为。用户也可以自定义运算符重载，从而为自定义类提供更加灵活方便的操作。</p>
+<p>运算符重载的本质即将运算符的对应运算转变为对应的函数操作，当用户使用某一运算符时，就转至定义该运算符操作的函数。</p>
+<h2 id="1-运算符重载的规则"><a href="#1-运算符重载的规则" class="headerlink" title="1. 运算符重载的规则"></a>1. 运算符重载的规则</h2><ol>
+<li><p>在c++中，绝大多数运算符都可以实现运算符重载，只用少数运算符除外，这其中包括，类属关系运算符 “.” ,成员指针运算符“.*”, 作用域分辨符“::”和三目运算符“?:”。</p>
 </li>
-<li><p>函数是否与基类的虚函数有相同的参数个数及相同的参数类型</p>
+<li><p>重载后的运算符优先级和结合性都不会发生改变。</p>
 </li>
-<li><p>函数是否与基类的虚函数有着相同的返回类型。</p>
+<li><p>不能改变原运算符的操作对象个数，且重载的功能应与原有的功能类似。</p>
+</li>
+<li><p>不能创造新的运算符</p>
+</li>
+<li><p>(),[],-&gt;及赋值运算符必须被声明为类成员</p>
 </li>
 </ol>
-<p>除了在基类和派生类中定义相应的虚函数成员，必须通过对象的指针或是引用调用相应的虚函数才能实现动态绑定，直接通过对象名访问虚函数则只能实现静态绑定，即根据对象名的类型调用相对应的虚函数。</p>
-<p>通过在基类和派生类中分别定义相应的虚函数成员，程序在执行时即可动态的根据调用者的类型决定应该调用哪一个函数实现，即根据对象的类型动态决定对象的行为。</p>
-<h3 id="简单的demo"><a href="#简单的demo" class="headerlink" title="简单的demo"></a>简单的demo</h3><p>定义基类：</p>
-<pre><code>class Parent
+<h2 id="2-运算符重载的形式"><a href="#2-运算符重载的形式" class="headerlink" title="2. 运算符重载的形式"></a>2. 运算符重载的形式</h2><p>运算符可以被重载为成员函数，也可以以友元函数的形式重载为非成员函数。</p>
+<h3 id="2-1-运算符被重载为成员函数"><a href="#2-1-运算符被重载为成员函数" class="headerlink" title="2.1 运算符被重载为成员函数"></a>2.1 运算符被重载为成员函数</h3><h4 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h4><p>对于两个对象 A 和 B 及某一二元运算符 op 进行 A op B 的运算，那么在类定义中如何将运算符重载为成员函数？</p>
+<p>首先，运算符应作为对象A的类的成员函数，而对象B对应的类将作为该重载成员函数的形参，运算结果则作为函数的返回值。如对于 A op B 的运算，重载的成员函数应该是这样的：</p>
+<pre><code>Type operator op (Type name);
+</code></pre><p>如对于+运算符, 形式为Type operator+(Type name);</p>
+<h4 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h4><p>一元运算符的形式相比二元元算符来说更加简单。</p>
+<p>只需满足 </p>
+<pre><code>Type operator op ();
+</code></pre><p>如对于！运算符，形式就可以为 Type operator!() const;这样的形式</p>
+<h3 id="2-2-运算符被重载为非成员函数"><a href="#2-2-运算符被重载为非成员函数" class="headerlink" title="2.2 运算符被重载为非成员函数"></a>2.2 运算符被重载为非成员函数</h3><p>有些运算符必须被重载为非成员函数的形式，比如 &lt;&lt; 和 &gt;&gt; 运算符，原因在与如果用成员函数重载 &lt;&lt; 和 &gt;&gt; 运算符</p>
+<p>比如这样</p>
+<pre><code>AType operator&lt;&lt;(Output &amp;stream);
+</code></pre><p>那么我们的调用形式将变成这样：</p>
+<pre><code>A &lt;&lt; cout;
+</code></pre><p>很明显，这样的调用形式同我们常规使用&lt;&lt;很不相同，所以我们应该避免使用成员函数重载。</p>
+<p>那么该如何以非成员函数的形式重载操作符，通常应该以友元函数的形式进行重载。</p>
+<p>比如对于 PhoneNumber 类，</p>
+<pre><code>class PhoneNumber
 {
-public:
-    virtual void function1();
-};
-
-void Parent::function1()
-{
-    cout &lt;&lt; &quot;Parent.function1()&quot; &lt;&lt; endl;
+    friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;,PhoneNumber &amp;);
+private:
+    std::string areaCode;
+    std::string number;
 }
-</code></pre><p>定义派生类：</p>
-<pre><code>class Child : public Parent
+</code></pre><p>友元函数的具体定义为</p>
+<pre><code>ostream &amp;PhoneNumber::operator&lt;&lt;(std::ostream &amp;output,PhoneNumber &amp;num)
 {
-public:
-    void function1();
-};
-
-void Child::function1()
-{
-    cout &lt;&lt; &quot;Child.function1()&quot; &lt;&lt; endl;
+    output &lt;&lt; &quot;(&quot; &lt;&lt; num.areaCode &lt;&lt; &quot;)&quot; &lt;&lt; num.number &lt;&lt; endl;
 }
-</code></pre><p>调用：</p>
-<pre><code>int main()
-{
-    Parent parent;
-    Child child;
+</code></pre><p>这样就可实现以非成员函数形式重载运算符。</p>
+<h2 id="3-实例"><a href="#3-实例" class="headerlink" title="3.实例"></a>3.实例</h2><p>待续</p>
 
-    Parent *parent_ptr = &amp;parent;
-    Parent *child_ptr = &amp;child;
-
-    Parent &amp;parent_ref = parent;
-    Parent &amp;child_ref = child;
-
-    //通过指针调用
-    parent_ptr-&gt;function1();
-    child_ptr-&gt;function1();
-
-    //通过引用调用
-    parent_ref.function1();
-    child_ref.function1();
-
-    return 0;
-}
-</code></pre><p>执行结果：</p>
-<pre><code>Parent.function1()
-Child.function1()
-Parent.function1()
-Child.function1()
-</code></pre><p>可以看到同时定义Parent类型的指针和引用，但由于指向的对象的类型不同，调用结果也不同，实现了运行时的多态。</p>
-<h2 id="纯虚函数及抽象类"><a href="#纯虚函数及抽象类" class="headerlink" title="纯虚函数及抽象类"></a>纯虚函数及抽象类</h2><p>抽象类可以为一群具有相似功能的类族提供通用的接口。</p>
-<p>c++中可以通过在类定义中添加纯虚函数，使得该类成为抽象类，即抽象类是具有纯虚函数的类。</p>
-<p>纯虚函数只要在虚函数声明之后添加 “ = 0 ”，即可完成纯虚函数的声明。</p>
-<p>纯虚函数只需在类定义中提供纯虚函数声明，无需提供具体的函数实现。</p>
-<h3 id="又一个demo"><a href="#又一个demo" class="headerlink" title="又一个demo"></a>又一个demo</h3><p>类定义</p>
-<pre><code>class Shape
-{
-public:
-    virtual void draw() = 0;
-};
-
-class Circle: public Shape
-{
-public:
-    void draw();
-};
-
-void Circle::draw()
-{
-    cout &lt;&lt; &quot;Draw a circle.&quot; &lt;&lt; endl;
-}
-
-class Rectangle: public Shape
-{
-    void draw();
-};
-
-void Rectangle::draw()
-{
-    cout &lt;&lt; &quot;Draw a rectangle.&quot; &lt;&lt; endl;
-}
-</code></pre><p>执行：</p>
-<pre><code>int main()
-{
-    Shape *shapes[2];
-    Rectangle rec;
-    Circle cir;
-
-    shapes[0] = &amp;rec;
-    shapes[1] = &amp;cir;
-
-    for(size_t i = 0; i &lt; 2; i++)
-        shapes[i]-&gt;draw();   
-
-    return 0;
-}
-</code></pre><p>执行结果：</p>
-<pre><code>Draw a rectangle.
-Draw a circle.
-</code></pre>
       
     </div>
 
@@ -463,14 +393,6 @@ Draw a circle.
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/c/" rel="tag"># c++</a>
-          
-            <a href="/tags/多态/" rel="tag"># 多态</a>
-          
-        </div>
-      
 
       
       
@@ -480,14 +402,18 @@ Draw a circle.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/28/[c++]c++中的多态/" rel="next" title="[c++]c++学习笔记：多态（一）">
+                <i class="fa fa-chevron-left"></i> [c++]c++学习笔记：多态（一）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/28/[c++]c++中的运算符重载/" rel="prev" title="[c++]c++学习笔记:运算符重载">
-                [c++]c++学习笔记:运算符重载 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/01/html-html笔记/" rel="prev" title="[html]html笔记">
+                [html]html笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -617,7 +543,7 @@ Draw a circle.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运行时多态"><span class="nav-number">1.</span> <span class="nav-text">1.运行时多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的demo"><span class="nav-number">1.1.</span> <span class="nav-text">简单的demo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#纯虚函数及抽象类"><span class="nav-number">2.</span> <span class="nav-text">纯虚函数及抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#又一个demo"><span class="nav-number">2.1.</span> <span class="nav-text">又一个demo</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运算符重载的规则"><span class="nav-number">1.</span> <span class="nav-text">1. 运算符重载的规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-运算符重载的形式"><span class="nav-number">2.</span> <span class="nav-text">2. 运算符重载的形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-运算符被重载为成员函数"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 运算符被重载为成员函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二元运算符"><span class="nav-number">2.1.1.</span> <span class="nav-text">二元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一元运算符"><span class="nav-number">2.1.2.</span> <span class="nav-text">一元运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-运算符被重载为非成员函数"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 运算符被重载为非成员函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-实例"><span class="nav-number">3.</span> <span class="nav-text">3.实例</span></a></li></ol></div>
             
 
           </div>
